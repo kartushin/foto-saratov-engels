@@ -6,6 +6,13 @@ module.exports = {
   extends: ['airbnb', 'react-app', 'plugin:jsx-a11y/recommended', 'prettier'],
   plugins: ['jsx-a11y', 'prettier'],
   rules: {
+    // 'import/no-extraneous-dependencies': [
+    //   'error',
+    //   {
+    //     devDependencies: ['**/*.emotion.*'],
+    //     peerDependencies: true,
+    //   },
+    // ],
     semi: 2,
     'react/react-in-jsx-scope': 0,
     'import/prefer-default-export': 0,

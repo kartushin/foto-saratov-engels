@@ -1,3 +1,4 @@
+import { Fade } from 'react-awesome-reveal';
 import PriceListItem from './PricelistItem';
 
 function PriceList({ slice }) {
@@ -7,7 +8,9 @@ function PriceList({ slice }) {
         className="block-name text-5xl my-4 md:w-5/6 md:my-16 text-center"
         id={slice.slice_type}
       >
-        {slice.primary.title}
+        <Fade cascade duration={100}>
+          {slice.primary.title}
+        </Fade>
       </div>
       <div className="md:flex sm:w-3/4 container">
         {slice.items.map((item) => (
@@ -15,7 +18,7 @@ function PriceList({ slice }) {
           <PriceListItem key={item.cost} {...item} />
         ))}
       </div>
-      <div className="w-full h-32 text-center">content</div>
+      <div className="w-full h-32 text-center" />
     </>
   );
 }

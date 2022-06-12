@@ -21,6 +21,7 @@ function PhotoItem({ photo }) {
 }
 
 function GenresListItem({ image, title, content }) {
+  console.log('images => ', image);
   const settings = {
     arrows: false,
     dots: true,

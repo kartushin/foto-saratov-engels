@@ -1,4 +1,6 @@
 import * as prismicH from '@prismicio/helpers';
+import * as Scroll from 'react-scroll';
+import { Fade } from 'react-awesome-reveal';
 import { PrismicLink } from '@prismicio/react';
 
 function ContactPhoto({ photo }) {
@@ -17,13 +19,15 @@ function ContactPhoto({ photo }) {
 
 function Contact({ slice }) {
   return (
-    <>
+    <Scroll.Element name={slice.slice_type}>
       <div
         name="Contact"
         className="sm:w-5/6 text-5xl md:my-16 text-center"
-        id={slice.slice_type}
+        // id={slice.slice_type}
       >
-        {slice.primary.title}
+        <Fade cascade duration={100}>
+          {slice.primary.title}
+        </Fade>
       </div>
       <div className="md:w-1/2 grid justify-items-center p-4">
         <div className="shadow-border shadow-border-up">
@@ -62,8 +66,8 @@ function Contact({ slice }) {
           </div>
         </div>
       </div>
-      <div className="w-full h-32 text-center">content</div>
-    </>
+      <div className="w-full h-32 text-center" />
+    </Scroll.Element>
   );
 }
 

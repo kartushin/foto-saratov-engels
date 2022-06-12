@@ -1,6 +1,7 @@
 import * as prismicH from '@prismicio/helpers';
-import { animateScroll as scroll } from 'react-scroll';
 
+import { animateScroll as scroll } from 'react-scroll';
+import { Fade } from 'react-awesome-reveal';
 // eslint-disable-next-line
 const HeroPhoto = ({ photo }) => {
   if (!photo) {
@@ -26,7 +27,9 @@ function SiteName({ slice }) {
       <div className="md:w-1/2 py-4" id={slice.slice_type}>
         <div className="title w-full md:w-3/4 grid justify-items-center">
           <div className="landing-name my-4 text-4xl sm:mx-0 mx-4">
-            {slice.primary.title}
+            <Fade cascade duration={100}>
+              {slice.primary.sitename}
+            </Fade>
           </div>
           <div className="w-full p-4">
             <div className="grid justify-items-center">
@@ -55,7 +58,7 @@ function SiteName({ slice }) {
       <div className="md:w-1/2 grid p-4">
         {'loaded' && <HeroPhoto photo={slice.primary.photo} />}
       </div>
-      <div className="w-full h-32 text-center">content</div>
+      <div className="w-full h-32 text-center" />
     </>
   );
 }
