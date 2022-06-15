@@ -1,5 +1,6 @@
 import { PrismicText } from '@prismicio/react';
 import * as prismicH from '@prismicio/helpers';
+import { Fade } from 'react-awesome-reveal';
 
 function AboutMePhoto({ photo }) {
   if (!photo) {
@@ -22,7 +23,9 @@ function AboutMe({ slice }) {
         className="sm:w-5/6 text-5xl md:my-16 text-center"
         id={slice.slice_type}
       >
-        {slice.primary.title}
+        <Fade cascade duration={100}>
+          {slice.primary.title}
+        </Fade>
       </div>
       <div className="md:w-1/2 grid justify-items-center p-2">
         <div className="shadow-border shadow-border-right">
@@ -58,7 +61,7 @@ function AboutMe({ slice }) {
           </div>
         </div>
       </div>
-      <div className="w-full h-32 text-center">content</div>
+      <div className="w-full h-32 text-center" />
     </>
   );
 }

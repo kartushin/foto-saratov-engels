@@ -1,8 +1,7 @@
 import { Link } from 'react-scroll';
 import './menu-list.css';
 
-// eslint-disable-next-line camelcase
-function MenuListItem({ primary, slice_type }) {
+function MenuListItem({ primary, sliceType }) {
   return (
     <button
       type="button"
@@ -10,13 +9,10 @@ function MenuListItem({ primary, slice_type }) {
     >
       <Link
         activeClass="active"
-        // eslint-disable-next-line camelcase
-        to={slice_type}
-        // eslint-disable-next-line react/jsx-boolean-value
-        spy={true}
-        // eslint-disable-next-line react/jsx-boolean-value
-        smooth={true}
-        offset={-150}
+        to={sliceType}
+        spy
+        smooth
+        offset={-250}
         duration={1000}
         className="icons w-full py-8"
       >

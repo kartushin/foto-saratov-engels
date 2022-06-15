@@ -1,3 +1,4 @@
+import { Fade } from 'react-awesome-reveal';
 import GenresListItem from './GenresListItem';
 
 function PhotoGenres({ slice }) {
@@ -8,7 +9,9 @@ function PhotoGenres({ slice }) {
         // eslint-disable-next-line camelcase
         id={slice.slice_type}
       >
-        {slice.primary.title}
+        <Fade cascade duration={100}>
+          {slice.primary.title}
+        </Fade>
       </div>
       <div className="md:flex sm:w-3/4 container">
         {slice.items.map((item) => (
@@ -16,7 +19,7 @@ function PhotoGenres({ slice }) {
           <GenresListItem key={item.image.url} {...item} />
         ))}
       </div>
-      <div className="w-full h-32 text-center">content</div>
+      <div className="w-full h-32 text-center" />
     </>
   );
 }

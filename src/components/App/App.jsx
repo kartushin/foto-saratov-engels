@@ -6,15 +6,18 @@ import { PriceList } from '../PriceList';
 import { Contact } from '../Contact';
 import { MenuList } from '../MenuList';
 import { Footer } from '../Footer';
+import { PRISMIC_DOCUMENTS } from '../../constans/constans';
 import './shadow-border.css';
 
 function App() {
-  const [content] = usePrismicDocumentByUID('homepage', 'main');
-  console.log(content);
+  const [content] = usePrismicDocumentByUID(
+    PRISMIC_DOCUMENTS.homepage,
+    PRISMIC_DOCUMENTS.main,
+  );
   return (
     <>
       <div className="container mx-auto px-2">
-        <MenuList />
+        <MenuList data={content} />
         <div className="h-24" />
         <div className="relative flex flex-wrap justify-center my-4">
           {content && (
@@ -32,7 +35,7 @@ function App() {
         </div>
       </div>
       <div className="w-full mx-auto">
-        <Footer />
+        <Footer data={content} />
       </div>
     </>
   );

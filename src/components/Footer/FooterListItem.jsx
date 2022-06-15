@@ -1,7 +1,6 @@
 import { Link } from 'react-scroll';
 
-// eslint-disable-next-line camelcase
-function FooterListItem({ primary, slice_type }) {
+function FooterListItem({ sliceType, primary }) {
   return (
     <button
       type="button"
@@ -9,12 +8,9 @@ function FooterListItem({ primary, slice_type }) {
     >
       <Link
         activeClass="active"
-        // eslint-disable-next-line camelcase
-        to={slice_type}
-        // eslint-disable-next-line react/jsx-boolean-value
-        spy={true}
-        // eslint-disable-next-line react/jsx-boolean-value
-        smooth={true}
+        to={sliceType}
+        spy
+        smooth
         offset={-150}
         duration={1000}
         className="icons w-full py-8"
