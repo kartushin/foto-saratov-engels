@@ -1,24 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { PrismicText } from '@prismicio/react';
-import * as prismicH from '@prismicio/helpers';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './dots.css';
-
-function PhotoItem({ photo }) {
-  if (!photo) {
-    return null;
-  }
-
-  const photoSrc = prismicH.asImageSrc(photo);
-
-  return (
-    <div>
-      <img className="w-full" src={photoSrc} alt="" />
-    </div>
-  );
-}
+import { IMAGE_ITEM } from '../../constans/constans';
+import PhotoItem from './PhotoItem';
 
 function GenresListItem({ image, title, content }) {
   const settings = {
@@ -39,15 +26,16 @@ function GenresListItem({ image, title, content }) {
       </div>
     ),
   };
-
   return (
     <div className="md:w-1/4 grow border-4 border-black md:m-6 m-4 p-6 ">
       <div className="slider">
         <Slider {...settings}>
-          {'loaded' && <PhotoItem photo={image.imageOne} />}
-          {'loaded' && <PhotoItem photo={image.imageTwo} />}
-          {'loaded' && <PhotoItem photo={image.imageTree} />}
-          {'loaded' && <PhotoItem photo={image.imageFour} />}
+          <PhotoItem photo={image} />
+          {Object.keys(image)
+            .filter((i) => IMAGE_ITEM.includes(i))
+            .map((item) => (
+              <PhotoItem key={image[item]} photo={image[item]} />
+            ))}
         </Slider>
       </div>
       <div className="info p-4">

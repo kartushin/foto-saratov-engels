@@ -24,6 +24,7 @@ function Footer({ data }) {
             .filter((i) => MENU_SLICES.includes(i.slice_type))
             .map((item) => (
               <FooterListItem
+                key={item.slice_type}
                 sliceType={item.slice_type}
                 primary={item.primary}
               />
@@ -31,18 +32,22 @@ function Footer({ data }) {
       </div>
       <div className="w-2/5">
         <div className="text-md text-white py-4">
-          <div className="px-2 flex items-center justify-center">
-            <div className="icons">
-              <FaInstagram />
+          <PrismicLink field={data && data.data.instagramlink}>
+            <div className="px-2 flex items-center justify-center">
+              <div className="icons">
+                <FaInstagram />
+              </div>
+              <div className="px-2">instagram</div>
             </div>
-            <div className="px-2">instagram</div>
-          </div>
-          <div className="px-2 mt-2 flex items-center justify-center">
-            <div className="icons">
-              <FaVk />
+          </PrismicLink>
+          <PrismicLink field={data && data.data.vkontaktelink}>
+            <div className="px-2 mt-2 flex items-center justify-center">
+              <div className="icons">
+                <FaVk />
+              </div>
+              <div className="px-2">vkontakte</div>
             </div>
-            <div className="px-2">vkontakte</div>
-          </div>
+          </PrismicLink>
         </div>
       </div>
     </div>

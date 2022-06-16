@@ -10,4 +10,6 @@ const MENU_SLICES = [
   'contacts',
 ];
 
-export { PRISMIC_DOCUMENTS, MENU_SLICES };
+const IMAGE_ITEM = ['imageOne', 'imageTwo', 'imageTree', 'imageFour'];
+
+export { PRISMIC_DOCUMENTS, MENU_SLICES, IMAGE_ITEM };

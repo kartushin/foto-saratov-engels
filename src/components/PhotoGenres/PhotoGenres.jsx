@@ -15,8 +15,12 @@ function PhotoGenres({ slice }) {
       </div>
       <div className="md:flex sm:w-3/4 container">
         {slice.items.map((item) => (
-          // eslint-disable-next-line react/jsx-props-no-spreading
-          <GenresListItem key={item.image.url} {...item} />
+          <GenresListItem
+            key={item.image.url}
+            image={item.image}
+            title={item.title}
+            content={item.content}
+          />
         ))}
       </div>
       <div className="w-full h-32 text-center" />
