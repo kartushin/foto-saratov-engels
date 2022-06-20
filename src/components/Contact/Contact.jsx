@@ -1,22 +1,8 @@
-import * as prismicH from '@prismicio/helpers';
 import * as Scroll from 'react-scroll';
 import { Fade } from 'react-awesome-reveal';
 import { PrismicLink } from '@prismicio/react';
 import { FaInstagram, FaVk } from 'react-icons/fa';
-
-function ContactPhoto({ photo }) {
-  if (!photo) {
-    return null;
-  }
-
-  const photoSrc = prismicH.asImageSrc(photo);
-
-  return (
-    <div>
-      <img src={photoSrc} alt="" />
-    </div>
-  );
-}
+import ContactPhoto from './ContactPhoto';
 
 function Contact({ slice }) {
   return (
@@ -29,7 +15,7 @@ function Contact({ slice }) {
       <div className="flex w-full">
         <div className="md:w-1/2 grid justify-items-center p-4">
           <div className="shadow-border shadow-border-up">
-            {'loaded' && <ContactPhoto photo={slice.primary.firstphoto} />}
+            <ContactPhoto photo={slice.primary.firstphoto} />
           </div>
         </div>
         <div className="md:w-1/2 grid justify-items-left p-4">
@@ -64,7 +50,7 @@ function Contact({ slice }) {
           </div>
           <div className="md:w-1/2 pt-6 sm:block hidden">
             <div className="shadow-border">
-              {'loaded' && <ContactPhoto photo={slice.primary.secondphoto} />}
+              <ContactPhoto photo={slice.primary.secondphoto} />
             </div>
           </div>
         </div>

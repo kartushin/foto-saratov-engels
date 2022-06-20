@@ -1,20 +1,6 @@
 import { PrismicText } from '@prismicio/react';
-import * as prismicH from '@prismicio/helpers';
 import { Fade } from 'react-awesome-reveal';
-
-function AboutMePhoto({ photo }) {
-  if (!photo) {
-    return null;
-  }
-
-  const photoSrc = prismicH.asImageSrc(photo);
-
-  return (
-    <div>
-      <img src={photoSrc} alt="" />
-    </div>
-  );
-}
+import AboutMePhoto from './AboutMePhoto';
 
 function AboutMe({ slice }) {
   return (
@@ -29,7 +15,7 @@ function AboutMe({ slice }) {
       </div>
       <div className="md:w-1/2 grid justify-items-center p-2">
         <div className="shadow-border shadow-border-right">
-          {'loaded' && <AboutMePhoto photo={slice.primary.optional_image} />}
+          <AboutMePhoto photo={slice.primary.optional_image} />
         </div>
       </div>
       <div className="md:w-1/2 grid justify-items-left p-2">
@@ -44,9 +30,7 @@ function AboutMe({ slice }) {
           </div>
           <div className="md:w-1/2 py-3 sm:hidden">
             <div className="shadow-border">
-              {'loaded' && (
-                <AboutMePhoto photo={slice.primary.image_side_two} />
-              )}
+              <AboutMePhoto photo={slice.primary.image_side_two} />
             </div>
           </div>
           <div className="justify-self-start md:pt-0 md:mt-0 mt-8 pt-8 pb-8 px-8 md:border-0 border-4 border-black text-xl text-black">
@@ -57,7 +41,7 @@ function AboutMe({ slice }) {
         </div>
         <div className="md:w-1/2 pt-6 sm:block hidden">
           <div className="shadow-border">
-            {'loaded' && <AboutMePhoto photo={slice.primary.image_side_two} />}
+            <AboutMePhoto photo={slice.primary.image_side_two} />
           </div>
         </div>
       </div>

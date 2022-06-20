@@ -1,21 +1,6 @@
-import * as prismicH from '@prismicio/helpers';
-
 import { animateScroll as scroll } from 'react-scroll';
 import { Fade } from 'react-awesome-reveal';
-// eslint-disable-next-line
-const HeroPhoto = ({ photo }) => {
-  if (!photo) {
-    return null;
-  }
-
-  const photoSrc = prismicH.asImageSrc(photo);
-
-  return (
-    <div className="shadow-border">
-      <img className="place-self-center" src={photoSrc} alt="" />
-    </div>
-  );
-};
+import HeroPhoto from './HeroPhoto';
 
 function scrollToBottom() {
   scroll.scrollToBottom();
